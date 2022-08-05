@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>Multi Step Form - Easy Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <form id="Form1">
+        <h3>Account</h3>
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        <input type="text" placeholder="Username *" required>
+        <input type="text" placeholder="Email Address *" required>
+        <input type="password" placeholder="Password *" required>
+        <input type="password" placeholder="Confirm Password *" required>
+
+        <div class="btn-box">
+          <button type="submit" id="Next1">Next</button>
+        </div>
+      </form>
+      
+      <form id="Form2">
+        <h3>Address</h3>
+        <input type="text" placeholder="Address" required>
+        <input type="text" placeholder="Appartment, Suite, etc.">
+        <label for="country">Country:</label>
+          <select id="country" name="country">
+            <option value="United States">United States</option>
+            <option value="China">China</option>
+            <option value="Italy">Italy</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Mexico">Mexcio</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Germany">Germany</option>
+            <option value="United Kingdom">United Kingdom</option>
+          </select>
+        <input type="text" placeholder="City *" required>
+        <input type="text" placeholder="Zipcode *" required>
+        <input type="text" placeholder="Company">
+        <input type="text" placeholder="Phone Number">
+
+        <div class="btn-box">
+          <button type="button" id="Back1">Back</button>
+          <button type="submit" id="Next2">Next</button>
+        </div>
+      </form>
+
+      <form id="Form3">
+        <h3>Preferences</h3>
+
+        <div>
+          <label><input type="checkbox" /> Send Notifications</label>
+          <label><input type="checkbox" /> Share information with related marketer</label>
+        </div>
+        <div class="btn-box">
+          <button type="button" id="Back2">Back</button>
+          <button type="button">Submit</button>
+        </div>
+      </form>
+      
+      <dvi class="step-row">
+          <div id="progress"></div>
+          <div class="step-col"><small>Step 1</small></div>
+          <div class="step-col"><small>Step 2</small></div>
+          <div class="step-col"><small>Step 3</small></div>
+        </dvi>
+    
+    <script>
+
+      var Form1 = document.getElementById("Form1");
+      var Form2 = document.getElementById("Form2");
+      var Form3 = document.getElementById("Form3");
+
+      var Next1 = document.getElementById("Next1");
+      var Next2 = document.getElementById("Next2");
+      var Back1 = document.getElementById("Back1");
+      var Back2 = document.getElementById("Back2");
+
+      var progress = document.getElementById("progress")
+
+      Next1.onclick = function(){
+        Form1.style.left = "-450px";
+        Form2.style.left = "40px";
+        progress.style.width = "240px";
+      }
+      Back1.onclick = function(){
+        Form1.style.left = "40px";
+        Form2.style.left = "450px";
+        progress.style.width = "120px";
+      }
+      Next2.onclick = function(){
+        Form2.style.left = "-450px";
+        Form3.style.left = "40px";
+        progress.style.width = "360px";
+      }
+      Back2.onclick = function(){
+        Form2.style.left = "40px";
+        Form3.style.left = "450px";
+        progress.style.width = "240px";
+      }
+    </script>
+    
+    </div>
+    
+  </body>
+</html>
